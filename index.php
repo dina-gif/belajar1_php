@@ -1,8 +1,8 @@
 <?php
     echo "<br><br><a href='materi1.php'>materi 1 : If dan Else</a>";
     echo "<br><br><a href='materi2.php'>materi 2 : Looping</a>";
-    echo "<br><br><a href='materi3.php'>materi 3 : Array</a>";
-    echo "<br><br><a href='materi4.php'>materi 4 : Function</a>";
+    echo "<br><br><a href='materi3.php'>materi 3 : Function</a>";
+    echo "<br><br><a href='materi4.php'>materi 4 : </a>";
     echo "<br><br><a href='materi5.php'>materi 5 : OOP</a>";
     echo "<br><br><a href='materi6.php'>materi 6 : Database</a>";
     echo "<br><br><a href='materi7.php'>materi 7 : Session dan Cookie</a>";
