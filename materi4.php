@@ -37,8 +37,6 @@ if (isset($_GET['hapus'])) {
     <input type="submit" value="kirim data" name="kirim">
 </form>
 
-//menampilkan data
-
 <table border="1">
     <tr>
         <th>id_user</th>
@@ -59,9 +57,49 @@ if (isset($_GET['hapus'])) {
             <td>{$row['password']}</td>
             <td>{$row['nama']}</td>
             <td>{$row['email']}</td>
-            <td><a href='materi4.php?hapus={$row['id_user']}'>hapus</a> | <a href=?edit={$row['id_user']}'>edit</a></td>
+            <td><a href='materi4.php?hapus={$row['id_user']}'>hapus</a> | <a href='?edit={$row['id_user']}'>edit</a></td>
             </tr>";
         }
     ?>
+echo "<br><br>=============================================================<br><br>
 
 </table>
+
+<?php
+    if (isset($_GET["edit"])) {
+        $id = $_GET["edit"];
+
+        $sql = " SELECT * FROM user WHERE id_user = '$id'";
+        $query = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($query);
+
+        echo "<form method='POST'>
+        <input type='hidden' name='id_user' value='{$row['id_user']}'>
+
+        username : <input type= 'text' name='username' value='{$row['username']}'>
+        password : <input type='password' name='password' value='{$row['password']}'>
+        nama : <input type='text' name='nama' value='{$row['nama']}'>
+        email : <input type='email' name='email' value='{$row['email']}'>
+        
+        <input type='submit' value='edit baca' name='edit'>
+        </form>";
+    }
+
+
+    if (isset($_POST['edit'])) {
+        $id = $_POST['id_user'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $nama = $_POST['nama'];
+        $email = $_POST['email'];
+
+        $sql = "UPDATE user SET username='$username', password='$password', nama='$nama', email='$email' WHERE id_user='$id'";
+        $query = mysqli_query($conn, $sql);
+
+        if($query){
+            echo "data berhasil diupdate";
+        } else {
+            echo "data gagal diupdate";
+        }
+    }
+?>
