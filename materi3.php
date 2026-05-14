@@ -28,7 +28,11 @@ echo "<br><br>=============================================================<br><
 echo "<br><br>=============================================================<br><br>";
 ?>
 
+<<<<<<< HEAD
     <form method="POST">
+=======
+    <form method="POST"> 
+>>>>>>> 5dd7e8c9411c34d644d5b985d5309b0112b6697c
         Masukkan Angka 1: <input type="number" name="angka1"><br><br>
         Masukkan Angka 2: <input type="number" name="angka2"><br><br>
         <input type="submit" name="kirim" value="kirim">
